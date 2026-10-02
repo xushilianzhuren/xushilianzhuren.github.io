@@ -82,6 +82,11 @@ function tgTheme(){var h=document.documentElement,d=h.getAttribute('data-theme')
 </header>
 
 <div class="ver">
+  <h2>v4.0.6<span class="tag">2026-10-02</span><span class="tag">日报全自动</span></h2>
+  <p>日报管道v2.0上线：帝国日报页实现零人工全自动——数据源自动取自本页版本史与自建访问统计，每日20:30自动出稿、自动同步双节点、自动提交搜索引擎索引。你看到的每一条日报都是机器自己写的。本日第11版。</p>
+  <h2>v4.0.5<span class="tag">2026-10-02</span><span class="tag">图片瘦身</span></h2>
+  <p>收款码图片webp化：微信+支付宝收款码从png/jpg转webp（164K→45K、129K→52K，平均降67%），购买页最后一屏图片加载再提速。全站死资产归档清除：sticker表情包1.2M+旧图副本共1.5M资产打包入云归档（COS已验活1543116字节）后从站点删除，站根4.7M→3.2M瘦身32%——镜像站同步清除，GitHub Pages旧资产一并清理。IndexNow同批补提changelog（此前限速403遗留，GET法202通过）。</p>
+<div class="ver">
   <h2>v4.0.4<span class="tag">2026-10-02</span><span class="tag">压缩+DNS事故修复</span></h2>
   <p>全站压缩传输上线：Caddy启用zstd+gzip双编码，HTML平均体积降60%+（首页20.8KB→8.2KB，双端生效）——弱网/移动端加载显著提速。同批修复DNS生产事故：主域名曾被误加双A记录（南京节点443无网站服务），约一半访客直接打不开官网2小时——已删除死记录，解析收敛至主站单点，九路复测全200。邮箱套件（MX/SPF/DMARC）保留未动。</p>
   <h2>v4.0.3<span class="tag">2026-10-02</span><span class="tag">索引修复+流量可见</span></h2>
