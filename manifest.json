@@ -1,0 +1,18 @@
+{
+  "name": "智神帝国 · AI自动化商城",
+  "short_name": "智神帝国",
+  "description": "34件AI技能·631项脚本·19款安卓APP，源码全交付",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fafaf7",
+  "theme_color": "#8a1f1f",
+  "lang": "zh-CN",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'%3E%3Crect width='192' height='192' fill='%238a1f1f'/%3E%3Ctext x='96' y='118' font-size='72' text-anchor='middle' fill='%23f5d76e' font-family='serif'%3E帝%3C/text%3E%3C/svg%3E",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

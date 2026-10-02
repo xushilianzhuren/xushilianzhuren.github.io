@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Agent技能工程实践：SKILL.md颗粒度 × 生产级案例橱窗 · 智神帝国</title>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="智神帝国">
+<meta property="og:title" content="AI Agent技能工程实践 · 智神帝国">
+<meta property="og:description" content="SKILL.md颗粒度×生产级案例：25个工艺的执行链路拆解">
+<meta property="og:url" content="https://zhishendiguo.com/blog-agent-skills.html">
+<meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI Agent技能工程实践 · 智神帝国">
+<meta name="twitter:description" content="SKILL.md颗粒度×生产级案例：25个工艺的执行链路拆解">
+<meta name="theme-color" content="#8a1f1f">
+<link rel="manifest" href="manifest.json">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "AI Agent技能工程实践 · 智神帝国", "url": "https://zhishendiguo.com/blog-agent-skills.html", "description": "SKILL.md颗粒度×生产级案例：25个工艺的执行链路拆解", "author": {"@type": "Organization", "name": "智神帝国", "url": "https://zhishendiguo.com/"}, "publisher": {"@type": "Organization", "name": "智神帝国"}, "inLanguage": "zh-CN", "datePublished": "2026-09-23"}</script>
+<meta name="description" content="Agent时代的新颗粒度不是npm包是SKILL.md。25+个生产验证的工艺：TTT训练管线、LoRA全流程、云函数部署、OAuth2密钥管理、四闭环商业设计，每件附完整执行链路。">
+<meta name="keywords" content="AI Agent, SKILL.md, Agent技能, Claude Skills, 自动化工作流, LoRA, 部署">
+<style>
+  :root{--ink:#111;--paper:#fafaf7;--accent:#8a1f1f;--gray:#555;}
+  *{margin:0;padding:0;box-sizing:border-box;font-family:"PingFang SC","Microsoft YaHei",sans-serif;}
+  body{background:var(--paper);color:var(--ink);line-height:1.9;}
+  .wrap{max-width:720px;margin:0 auto;padding:20px;}
+  header{text-align:center;padding:36px 0 12px;}
+  header h1{font-size:24px;letter-spacing:1px;line-height:1.5;}
+  header .meta{color:#999;font-size:13px;margin-top:10px;}
+  .rule{width:46px;height:3px;background:var(--accent);margin:16px auto 26px;}
+  article{background:#fff;border:1px solid #e5e2da;padding:26px 28px;}
+  article h2{font-size:18px;margin:26px 0 10px;color:#1a1a1a;}
+  article h2:first-child{margin-top:0;}
+  article p{font-size:15px;color:#333;margin-bottom:12px;}
+  article ul{padding-left:22px;margin-bottom:12px;}
+  article li{font-size:15px;color:#333;margin-bottom:6px;}
+  article code{background:#f2f0ea;padding:1px 6px;font-size:13px;font-family:Consolas,monospace;}
+  .cta{background:#f9f3ee;border:1px solid #e0d5c5;padding:18px 20px;margin:20px 0;text-align:center;}
+  .cta .p{color:var(--accent);font-weight:700;font-size:19px;margin-top:6px;}
+  .cta a{display:inline-block;margin-top:10px;background:var(--accent);color:#fff;padding:9px 26px;text-decoration:none;font-size:14px;letter-spacing:2px;}
+  .post2{background:#fff;border:1px solid #e5e2da;padding:26px 28px;margin-top:22px;}
+  .post2 h2{font-size:18px;color:#1a1a1a;margin-bottom:10px;}
+  .post2 p{font-size:15px;color:#333;margin-bottom:10px;}
+  .contact{background:#f2f0ea;padding:14px 18px;margin-top:16px;font-size:14px;}
+  footer{border-top:3px solid #8a1f1f;background:#f2f0ea;color:#555;margin-top:56px;padding:34px 20px 24px;font-size:13px;text-align:center;}
+  footer a.icp{color:#999;}
+
+/* ===== 暗色模式 v3.3（官网班2026-10-02注入）===== */
+html[data-theme="dark"]{--ink:#e8e2d5;--paper:#161412;--accent:#d4545c;--gray:#a39a8c;--card:#201d1a;--line:#3a352f;--soft:#211e1b;}
+html[data-theme="dark"] body{background:#161412;color:#e8e2d5;}
+html[data-theme="dark"] .card,html[data-theme="dark"] .post,html[data-theme="dark"] .step,html[data-theme="dark"] .board,html[data-theme="dark"] .contact,html[data-theme="dark"] section.detail,html[data-theme="dark"] .box,html[data-theme="dark"] table,html[data-theme="dark"] .td-wrap{background:#201d1a;border-color:#3a352f;}
+html[data-theme="dark"] .crumb,html[data-theme="dark"] .crumb a,html[data-theme="dark"] .sub,html[data-theme="dark"] .meta,html[data-theme="dark"] .date{color:#a39a8c;}
+html[data-theme="dark"] section.detail p,html[data-theme="dark"] .card p,html[data-theme="dark"] .post p,html[data-theme="dark"] .box p{color:#c9c0b0;}
+html[data-theme="dark"] h1,html[data-theme="dark"] h2,html[data-theme="dark"] h3{color:#e8e2d5;}
+html[data-theme="dark"] h2{border-left-color:#d4545c;}
+html[data-theme="dark"] a{color:#d4545c;}
+html[data-theme="dark"] a:hover{color:#e8757c;}
+html[data-theme="dark"] pre,html[data-theme="dark"] code{background:#1d1a17;color:#c9c0b0;}
+html[data-theme="dark"] textarea,html[data-theme="dark"] input,html[data-theme="dark"] select{background:#1d1a17;border-color:#3a352f;color:#e8e2d5;}
+html[data-theme="dark"] img,html[data-theme="dark"] video{filter:brightness(.92);}
+html[data-theme="dark"] footer{color:#8a7f6e;}
+html[data-theme="dark"] .zs-theme-btn{background:rgba(32,29,26,.92);border-color:rgba(212,84,92,.45);}
+.zs-theme-btn{position:fixed;top:14px;left:14px;z-index:99998;width:38px;height:38px;border-radius:50%;border:1px solid rgba(140,47,36,.4);background:rgba(250,250,247,.92);cursor:pointer;font-size:15px;line-height:1;box-shadow:0 2px 8px rgba(0,0,0,.15);padding:0;}
+.zs-theme-btn:hover{transform:scale(1.08);}
+</style><script>(function(){var s=localStorage.getItem('zs_theme');if(!s){s=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}if(s==='dark'){document.documentElement.setAttribute('data-theme','dark');}})();</script>
+
+<meta property="og:title" content="AI Agent技能工程实践：SKILL.md颗粒度 × 生产级案例橱窗 · 智神帝国">
+<meta property="og:description" content="Agent时代的新颗粒度不是npm包是SKILL.md。25+个生产验证的工艺：TTT训练管线、LoRA全流程、云函数部署、OAuth2密钥管理、四闭环商业设计，每件附完整执行链路。">
+<meta property="og:image" content="https://zhishendiguo.com/og-cover.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="智神帝国AI自动化商城分享封面">
+<meta property="og:url" content="https://zhishendiguo.com/blog-agent-skills">
+<meta property="og:type" content="website">
+  <link rel="canonical" href="https://zhishendiguo.com/blog-agent-skills.html">
+</head>
+<body>
+<button class="zs-theme-btn" id="zsTB" onclick="zsToggle()" title="切换明暗模式" aria-label="切换明暗主题">🌙</button>
+<script>function zsToggle(){var h=document.documentElement,d=h.getAttribute('data-theme')==='dark'?'light':'dark';h.setAttribute('data-theme',d);localStorage.setItem('zs_theme',d);var b=document.getElementById('zsTB');if(b)b.textContent=d==='dark'?'☀️':'🌙';}
+(function(){var s=localStorage.getItem('zs_theme')||((window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light');function sync(){var b=document.getElementById('zsTB');if(b)b.textContent=s==='dark'?'☀️':'🌙';}if(document.readyState!=='loading'){sync();}else{document.addEventListener('DOMContentLoaded',sync);}})();</script>
+<div class="wrap">
+  <header>
+    <h1>从0到1的AI Agent技能工程实践：<br>SKILL.md颗粒度 × 25个生产级案例橱窗</h1>
+    <div class="meta">2026-09-23 · Agent工程 · 开源橱窗实录</div>
+    <div class="rule"></div>
+  </header>
+
+  <article>
+    <h2>Agent时代的新颗粒度</h2>
+    <p>Agent时代的新颗粒度不是npm包，是SKILL.md。这不是概念炒作——当你的AI助手能读懂一份结构化的行为规则文档、照着工艺文档一步步执行、再调起配套脚本落地，"技能"第一次变成了可安装、可组合、可迭代的工程单元。</p>
+    <p>每件技能=SKILL.md行为规则+工艺文档+配套脚本，直接装给你的AI助手（Claude/自定义Agent）就能执行。不是网课，不是教程，是装上即用的生产工具。</p>
+
+    <h2>25个生产验证过的工艺</h2>
+    <ul>
+      <li><b>安卓APP命令行打包</b>——源码到签名APK全流程，不用装Android Studio</li>
+      <li><b>录屏动效拆解复刻</b>——逐帧手势识别+参数测量+转场参数库</li>
+      <li><b>浏览器自动化反检测</b>——登录墙、滑块、风控应对工艺全套</li>
+      <li><b>网盘自动化</b>——命令行直驱：上传下载断点续传、批量改名、分享转存</li>
+      <li><b>知识库蒸馏防臃肿</b>——热冷分层+截断探针+统一搜索器，让文档库永不膨胀</li>
+      <li><b>1718个免费API选型路由</b>——无Key数据源全维度覆盖</li>
+      <li><b>TTT训练管线、LoRA全流程、云函数部署、OAuth2/JWT密钥管理、四闭环商业设计</b>……每件都附完整执行链路。</li>
+    </ul>
+
+    <h2>当开源案例库看也值</h2>
+    <p>全部工艺在开源橱窗可查：<a href="https://github.com/xushilianzhuren/zhishen-skill-store" style="color:var(--accent);">github.com/xushilianzhuren/zhishen-skill-store</a></p>
+    <p>要交付版（源码全量+配套脚本+更新），见下方。</p>
+  </article>
+
+  <div class="cta">
+    <div>技能商店 · 当前货架已扩至34件 · 源码全交付</div>
+    <div class="p">统一定价 ¥699 / 件 · 买断制</div>
+    <a href="skills.html">进入技能商店 →</a>
+  </div>
+
+  <div class="post2">
+    <h2>另一篇：让AI替你干活的25件"武器"</h2>
+    <p>换个说法给效率人群：PPT一条命令出片、Word/PDF/Excel全家桶互转、手机无root远程掌控、系统周检自动报警、加密归档一条命令。都是我自己天天在用的真实工作流，不是空头概念。</p>
+    <p>699/件，<a href="index.html#pay" style="color:var(--accent);">扫码秒发夸克链接 →</a></p>
+  </div>
+
+  <div class="contact"><b>联系方式</b><br>微信：15967404693（同手机号）<br>QQ：852456426 · 邮箱：852456426@qq.com</div>
+  <a href="blog.html" style="display:inline-block;margin-top:18px;color:#8a1f1f;font-size:14px;">← 更多实战手记</a>
+  <footer><p>© 2026 智神帝国 · 徐时廉</p><p><a class="icp" href="https://beian.miit.gov.cn/" target="_blank">浙ICP备2026073203号-2</a></p></footer>
+</div><script src="https://zhishendiguo.com/cs.js" defer></script>
+</body></html>

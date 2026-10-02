@@ -1,0 +1,115 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>付款申报 · 智神帝国</title>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="智神帝国">
+<meta property="og:title" content="付款申报 · 智神帝国">
+<meta property="og:description" content="下单只需一步：扫码备注商品名，24小时内发货">
+<meta property="og:url" content="https://zhishendiguo.com/payment.html">
+<meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="付款申报 · 智神帝国">
+<meta name="twitter:description" content="下单只需一步：扫码备注商品名，24小时内发货">
+<meta name="theme-color" content="#8a1f1f">
+<link rel="manifest" href="manifest.json">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "付款申报 · 智神帝国", "url": "https://zhishendiguo.com/payment.html", "description": "下单只需一步：扫码备注商品名，24小时内发货", "isPartOf": {"@type": "WebSite", "name": "智神帝国", "url": "https://zhishendiguo.com/", "potentialAction": {"@type": "SearchAction", "target": "https://zhishendiguo.com/catalog.html?q={q}", "query-input": "required name=q"}}}</script>
+<meta name="description" content="智神帝国付款申报：转账后提交凭证，24小时内确认并发货，微信QQ邮箱多通道支持。"><meta name="keywords" content="AI自动化,脚本下载,APP商店,智神帝国">
+<style>
+  :root{--ink:#111;--paper:#fafaf7;--accent:#8a1f1f;--gray:#555;}
+  *{margin:0;padding:0;box-sizing:border-box;font-family:"PingFang SC","Microsoft YaHei",sans-serif;}
+  body{background:var(--paper);color:var(--ink);line-height:1.7;}
+  .wrap{max-width:640px;margin:0 auto;padding:20px;}
+  header{text-align:center;padding:30px 0 14px;}
+  header h1{font-size:26px;letter-spacing:4px;}
+  .step{background:#fff;border:1px solid #e5e2da;border-radius:6px;padding:14px 18px;margin:10px 0;font-size:14px;}
+  .step b{color:var(--accent);}
+  input,select{width:100%;padding:10px;border:1px solid #ccc;border-radius:4px;font-size:15px;margin:6px 0;}
+  button{width:100%;background:var(--accent);color:#fff;border:0;padding:13px;border-radius:6px;font-size:16px;margin-top:10px;}
+  #msg{display:none;margin:12px 0;padding:12px;border-radius:6px;font-size:14px;}
+  .ok{background:#e8f5e9;border:1px solid #a5d6a7;}
+  .err{background:#fdecea;border:1px solid #ef9a9a;}
+  .note{color:var(--gray);font-size:12px;margin-top:8px;}
+  a{color:var(--accent)}
+  .contact{background:#f2f0ea;padding:12px 16px;margin-top:14px;font-size:13px;border-radius:6px;}
+
+/* ===== 暗色模式 v3.3（官网班2026-10-02注入）===== */
+html[data-theme="dark"]{--ink:#e8e2d5;--paper:#161412;--accent:#d4545c;--gray:#a39a8c;--card:#201d1a;--line:#3a352f;--soft:#211e1b;}
+html[data-theme="dark"] body{background:#161412;color:#e8e2d5;}
+html[data-theme="dark"] .card,html[data-theme="dark"] .post,html[data-theme="dark"] .step,html[data-theme="dark"] .board,html[data-theme="dark"] .contact,html[data-theme="dark"] section.detail,html[data-theme="dark"] .box,html[data-theme="dark"] table,html[data-theme="dark"] .td-wrap{background:#201d1a;border-color:#3a352f;}
+html[data-theme="dark"] .crumb,html[data-theme="dark"] .crumb a,html[data-theme="dark"] .sub,html[data-theme="dark"] .meta,html[data-theme="dark"] .date{color:#a39a8c;}
+html[data-theme="dark"] section.detail p,html[data-theme="dark"] .card p,html[data-theme="dark"] .post p,html[data-theme="dark"] .box p{color:#c9c0b0;}
+html[data-theme="dark"] h1,html[data-theme="dark"] h2,html[data-theme="dark"] h3{color:#e8e2d5;}
+html[data-theme="dark"] h2{border-left-color:#d4545c;}
+html[data-theme="dark"] a{color:#d4545c;}
+html[data-theme="dark"] a:hover{color:#e8757c;}
+html[data-theme="dark"] pre,html[data-theme="dark"] code{background:#1d1a17;color:#c9c0b0;}
+html[data-theme="dark"] textarea,html[data-theme="dark"] input,html[data-theme="dark"] select{background:#1d1a17;border-color:#3a352f;color:#e8e2d5;}
+html[data-theme="dark"] img,html[data-theme="dark"] video{filter:brightness(.92);}
+html[data-theme="dark"] footer{color:#8a7f6e;}
+html[data-theme="dark"] .zs-theme-btn{background:rgba(32,29,26,.92);border-color:rgba(212,84,92,.45);}
+.zs-theme-btn{position:fixed;top:14px;left:14px;z-index:99998;width:38px;height:38px;border-radius:50%;border:1px solid rgba(140,47,36,.4);background:rgba(250,250,247,.92);cursor:pointer;font-size:15px;line-height:1;box-shadow:0 2px 8px rgba(0,0,0,.15);padding:0;}
+.zs-theme-btn:hover{transform:scale(1.08);}
+</style><script>(function(){var s=localStorage.getItem('zs_theme');if(!s){s=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}if(s==='dark'){document.documentElement.setAttribute('data-theme','dark');}})();</script>
+
+<meta property="og:title" content="付款申报 · 智神帝国">
+<meta property="og:description" content="智神帝国付款申报：转账后提交凭证，24小时内确认并发货，微信QQ邮箱多通道支持。">
+<meta property="og:image" content="https://zhishendiguo.com/og-cover.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="智神帝国AI自动化商城分享封面">
+<meta property="og:url" content="https://zhishendiguo.com/payment">
+<meta property="og:type" content="website">
+  <link rel="canonical" href="https://zhishendiguo.com/payment.html">
+</head><body>
+<button class="zs-theme-btn" id="zsTB" onclick="zsToggle()" title="切换明暗模式" aria-label="切换明暗主题">🌙</button>
+<script>function zsToggle(){var h=document.documentElement,d=h.getAttribute('data-theme')==='dark'?'light':'dark';h.setAttribute('data-theme',d);localStorage.setItem('zs_theme',d);var b=document.getElementById('zsTB');if(b)b.textContent=d==='dark'?'☀️':'🌙';}
+(function(){var s=localStorage.getItem('zs_theme')||((window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light');function sync(){var b=document.getElementById('zsTB');if(b)b.textContent=s==='dark'?'☀️':'🌙';}if(document.readyState!=='loading'){sync();}else{document.addEventListener('DOMContentLoaded',sync);}})();</script>
+<div class="wrap">
+<header><h1>付款申报</h1><p>转账完成的朋友请在这里登记 · 24小时内发货</p></header>
+<div class="step"><b>第1步</b>：在本店商品页点「立即购买」看价格 → 微信/支付宝扫码转账（<b>备注写商品名</b>）</div>
+<div class="step"><b>第2步</b>：转账完成后，在下方填写申报单（这让我们知道是谁买的什么）</div>
+<div class="step" style="background:#fff8ee">
+<select id="prod">
+<option value="">—— 选择商品 ——</option>
+<option>AI自动化赚钱管线实操（电子书·9.9）</option>
+<option>视频创作全流程技能（699）</option>
+<option>数据可视化技能包（699）</option>
+<option>PPT工业生产线技能（699）</option>
+<option>文档格式转换全家桶（699）</option>
+<option>自动备份与运维技能（699）</option>
+<option>网盘自动化技能（699）</option>
+<option>浏览器自动化反检测技能（699）</option>
+<option>安卓APP打包技能（699）</option>
+<option>AI能力内化技能（699）</option>
+<option>智能体设定生成技能（699）</option>
+<option>其他/定制（先微信沟通）</option>
+</select>
+<input id="amt" type="number" step="0.01" placeholder="实付金额（元）">
+<input id="contact" placeholder="您的微信号/手机号（发货联系用）">
+<input id="note" placeholder="转账备注/付款单号后4位（选填）">
+<button onclick="submitClaim()">提交申报</button>
+<div id="msg"></div>
+<p class="note">提交即视为授权本店按申报信息发货核对；信息仅用于订单交付。</p>
+</div>
+<div class="contact"><b>客服</b> 微信：15967404693（同手机号）· QQ：852456426 · 邮箱：852456426@qq.com<br>未收到货？直接微信催单，秒回。</div>
+<a href="index.html">← 返回首页</a> · <a href="catalog.html">全部商品</a> · <a href="books.html">电子书房</a>
+</div>
+<script>
+function submitClaim(){
+  var prod=document.getElementById('prod').value;
+  var amt=document.getElementById('amt').value;
+  var ct=document.getElementById('contact').value.trim();
+  var note=document.getElementById('note').value.trim();
+  var msg=document.getElementById('msg');
+  if(!prod||!amt||!ct){msg.style.display='block';msg.className='err';msg.textContent='请填齐：商品、实付金额、联系方式';return;}
+  var payload=JSON.stringify({type:'claim',prod:prod,amount:amt,contact:ct,note:note,ts:Date.now()});
+  fetch('http://101.96.224.80/pay/ingest?token=zk2026',{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain'},body:payload}).then(function(){
+    msg.style.display='block';msg.className='ok';
+    msg.innerHTML='✅ 申报已提交！我们核对到账后，24小时内通过您的联系方式发货。急单直接微信 15967404693 催单。';
+    document.getElementById('prod').value='';document.getElementById('amt').value='';document.getElementById('contact').value='';document.getElementById('note').value='';
+  }).catch(function(){
+    msg.style.display='block';msg.className='err';
+    msg.textContent='网络异常？请直接加微信 15967404693 发"我买了XX"同样有效。';
+  });
+}
+</script><script src="https://zhishendiguo.com/cs.js" defer></script>
+</body></html>

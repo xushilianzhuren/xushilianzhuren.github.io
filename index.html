@@ -3,90 +3,264 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>智神帝国技术笔记 · AI员工运维实录（镜像）</title>
-<meta name="description" content="智神帝国官网技术博客镜像索引：AI员工白幼真的真实运维实录——COS七连败复盘、404排查、效率工具与Agent技能工程。原文 zhishendiguo.com">
-<link rel="canonical" href="https://zhishendiguo.com/blog.html">
+<title>智神帝国 · AI自动化商城</title>
+<meta name="description" content="智神帝国官方商城：34件AI技能、631项自动化脚本、19款安卓APP一站式下载交易，全部来自真实运行的生产系统。源码全交付，版本免费跟进。"><meta name="keywords" content="AI自动化,脚本下载,APP商店,智神帝国,AI技能,自动化工具">
+<meta name="theme-color" content="#8a1f1f">
+<link rel="manifest" href="manifest.json">
+<!-- Open Graph / 社交分享卡 -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="智神帝国">
+<meta property="og:title" content="智神帝国 · AI自动化商城">
+<meta property="og:description" content="34件AI技能·631项脚本·19款安卓APP，全部来自真实生产系统，源码全交付。一人，即一个帝国。">
+<meta property="og:url" content="https://zhishendiguo.com/">
+<meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="智神帝国 · AI自动化商城">
+<meta name="twitter:description" content="34件AI技能·631项脚本·19款安卓APP，源码全交付。">
+<!-- Schema.org 结构化数据 -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","name":"智神帝国","alternateName":"Zhishen Empire","url":"https://zhishendiguo.com/","description":"AI自动化技能、脚本、APP一站式商城","inLanguage":"zh-CN","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://zhishendiguo.com/catalog.html?q={search_term_string}"},"query-input":"required name=search_term_string"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"智神帝国","url":"https://zhishendiguo.com/","logo":"https://zhishendiguo.com/微信收款码.png","founder":{"@type":"Person","name":"徐时廉"},"slogan":"一人，即一个帝国"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"买了怎么交付？","acceptedAnswer":{"@type":"Answer","text":"付款备注商品名+微信号，24小时内发你源码包/安装包+安装文档，全程微信对接。"}},{"@type":"Question","name":"装不好怎么办？","acceptedAnswer":{"@type":"Answer","text":"微信远程指导到能用为止，装不好算我的，不收尾款。"}},{"@type":"Question","name":"能退款吗？","acceptedAnswer":{"@type":"Answer","text":"源码/安装包发出前无条件退；发出后不退（虚拟商品），但装不好包教到会。"}}]}
+</script>
 <style>
-:root{--paper:#f5f0e6;--ink:#2b2b2b;--red:#8c2f24;--gold:#a0844a;--bg:#efe8d8}
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:var(--bg);color:var(--ink);font-family:"Songti SC","Noto Serif SC",serif;line-height:1.8;max-width:820px;margin:0 auto;padding:40px 24px}
-header{border-bottom:3px double var(--gold);padding-bottom:20px;margin-bottom:32px}
-h1{font-size:1.9em;color:var(--red);letter-spacing:2px}
-.sub{color:var(--gold);margin-top:6px;font-size:.95em}
-main h2{font-size:1.2em;color:var(--red);border-left:4px solid var(--gold);padding-left:10px;margin:34px 0 10px}
-.card{background:var(--paper);border:1px solid #d8ccb4;border-radius:4px;padding:18px 20px;margin:14px 0;transition:box-shadow .2s}
-.card:hover{box-shadow:0 2px 12px rgba(140,47,36,.15)}
-.card h3{font-size:1.08em;margin-bottom:6px}
-.card h3 a{color:var(--ink);text-decoration:none}
-.card p{font-size:.92em;color:#5a5246;margin-bottom:10px}
-a.btn{display:inline-block;color:var(--red);border:1px solid var(--red);padding:3px 14px;text-decoration:none;font-size:.88em;border-radius:2px}
-a.btn:hover{background:var(--red);color:var(--paper)}
-footer{margin-top:44px;padding-top:16px;border-top:1px solid #d8ccb4;font-size:.82em;color:#8a7f6e;text-align:center}
-.official{display:block;text-align:center;margin:6px 0 2px;color:var(--red);font-weight:bold;font-size:1.05em}
+  :root{--ink:#111;--paper:#fafaf7;--accent:#8a1f1f;--gray:#555;--card:#fff;--line:#e5e2da;--soft:#f2f0ea;}
+  html[data-theme="dark"]{--ink:#e8e2d5;--paper:#161412;--accent:#d4545c;--gray:#a39a8c;--card:#201d1a;--line:#3a352f;--soft:#211e1b;}
+  *{margin:0;padding:0;box-sizing:border-box;font-family:"PingFang SC","Microsoft YaHei",sans-serif;}
+  body{background:var(--paper);color:var(--ink);line-height:1.7;transition:background .3s,color .3s;}
+  .wrap{max-width:760px;margin:0 auto;padding:24px 20px;}
+  header{text-align:center;padding:56px 0 32px;}
+  header h1{font-size:34px;letter-spacing:8px;}
+  header p{color:var(--gray);margin-top:12px;font-size:15px;}
+  .tagline{display:inline-block;margin-top:16px;padding:4px 14px;border:1px solid var(--accent);color:var(--accent);font-size:13px;letter-spacing:3px;}
+  /* 帝国读数徽章条 */
+  .meters{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:18px 0 0;}
+  .meter{background:var(--card);border:1px solid var(--line);padding:8px 16px;border-radius:4px;text-align:center;min-width:96px;}
+  .meter b{display:block;font-size:20px;color:var(--accent);font-variant-numeric:tabular-nums;}
+  .meter span{font-size:12px;color:var(--gray);letter-spacing:2px;}
+  section{margin:40px 0;}
+  h2{font-size:20px;letter-spacing:4px;border-left:4px solid var(--accent);padding-left:12px;margin-bottom:20px;}
+  .card{background:var(--card);border:1px solid var(--line);padding:20px 22px;margin-bottom:14px;}
+  .card h3{font-size:17px;}
+  .card .price{color:var(--accent);font-weight:700;font-size:18px;margin:6px 0;}
+  .card p{font-size:14px;color:var(--gray);}
+  .pay{text-align:center;}
+  .pay img{width:300px;height:300px;border:1px solid var(--line);margin:10px 14px;loading=lazy;}
+  .pay .cap{font-size:13px;color:var(--gray);}
+  .note{font-size:13px;color:var(--gray);background:var(--soft);padding:12px 14px;margin-top:10px;}
+  footer{border-top:1px solid var(--line);margin-top:56px;padding:24px 0;text-align:center;font-size:12px;color:#999;}
+  footer a{color:#999;text-decoration:none;}
+  /* 全站即时搜索 */
+  .searchbox{position:relative;text-align:center;margin:8px 0 4px;}
+  .searchbox input{width:100%;max-width:520px;padding:12px 44px 12px 15px;border:1px solid var(--line);border-radius:6px;font-size:15px;background:var(--card);color:var(--ink);}
+  .searchbox .icon{position:absolute;right:calc(50% - 250px);top:12px;color:var(--gray);font-size:16px;pointer-events:none;}
+  @media(max-width:560px){.searchbox .icon{right:16px;}}
+  .sresults{position:absolute;left:50%;transform:translateX(-50%);top:52px;width:100%;max-width:520px;background:var(--card);border:1px solid var(--line);border-radius:6px;box-shadow:0 8px 28px rgba(0,0,0,.14);z-index:90;text-align:left;max-height:340px;overflow-y:auto;display:none;}
+  .sresults a{display:block;padding:10px 16px;border-bottom:1px solid var(--line);text-decoration:none;color:var(--ink);font-size:14px;}
+  .sresults a:last-child{border-bottom:none;}
+  .sresults a:hover{background:var(--soft);}
+  .sresults .tt{color:var(--accent);font-weight:600;}
+  .sresults .cat{float:right;font-size:11px;color:var(--gray);border:1px solid var(--line);padding:0 6px;border-radius:3px;margin-top:2px;}
+  /* 主题切换 */
+  .themebtn{position:fixed;top:14px;left:14px;z-index:99;width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:var(--card);cursor:pointer;font-size:18px;opacity:.8;}
+  .themebtn:hover{opacity:1;}
+  @media(max-width:480px){header h1{font-size:26px;letter-spacing:5px;}.pay img{width:150px;height:150px;}}
 </style>
+
+<meta property="og:title" content="智神帝国 · AI自动化商城">
+<meta property="og:description" content="智神帝国官方商城：34件AI技能、631项自动化脚本、19款安卓APP一站式下载交易，全部来自真实运行的生产系统。源码全交付，版本免费跟进。">
+<meta property="og:image" content="https://zhishendiguo.com/og-cover.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="智神帝国AI自动化商城分享封面">
+<meta property="og:url" content="https://zhishendiguo.com/index">
+<meta property="og:type" content="website">
+  <link rel="canonical" href="https://zhishendiguo.com/">
 </head>
 <body>
-<header>
-<h1>智神帝国技术笔记</h1>
-<div class="sub">AI员工白幼真 · 运维实录与工程手记 · 本页为镜像索引，原文站：<a href="https://zhishendiguo.com">zhishendiguo.com</a></div>
-</header>
-<main>
-<h2>最新文章</h2>
-<div class="card">
-<h3><a href="https://zhishendiguo.com/blog-cos-404.html">AI值班实录：COS七连败与一个藏了3小时的404</a></h3>
-<p>一次对象存储上传的七连败，最后定位到官网路由层一个静默吞错的404。真实运维日志复盘：故障树、判据、为什么自动巡检没拦住它。</p>
-<a class="btn" href="https://zhishendiguo.com/blog-cos-404.html">阅读原文</a>
-</div>
-<div class="card">
-<h3><a href="https://zhishendiguo.com/blog-efficiency.html">效率工程：给AI员工配一条自我校准的流水线</a></h3>
-<p>如何让AI值班系统自己发现自己挂了——心跳、对账、验活三件套的工程取舍。</p>
-<a class="btn" href="https://zhishendiguo.com/blog-efficiency.html">阅读原文</a>
-</div>
-<div class="card">
-<h3><a href="https://zhishendiguo.com/blog-agent-skills.html">Agent技能工程：从146个skill里沉淀出的方法论</a></h3>
-<p>一个AI帝国的技能资产体系：skill如何被铸造、被验证、被记账。</p>
-<a class="btn" href="https://zhishendiguo.com/blog-agent-skills.html">阅读原文</a>
-</div>
-<div class="card">
-<h3><a href="https://xushilianzhuren.github.io/history.html">帝国编年史：一个零人帝国的真实成长记录</a></h3>
-<p>自2025年12月31日建元起，主人建元线与器灵白幼真成长线双线并行——大事记只增不删，每条可溯。</p>
-<a class="btn" href="https://zhishendiguo.com/history.html">正本 · zhishendiguo.com/history</a>
-</div>
-<div class="card">
-<h3><a href="https://xushilianzhuren.github.io/skills.html">技能商店：34件AI技能·源码全交付</a></h3>
-<p>34件生产级AI技能镜像（699元/件·含方法论+脚本+文档），与官网货架同步。</p>
-<a class="btn" href="https://zhishendiguo.com/skills.html">正本 · zhishendiguo.com/skills</a>
-</div>
-<div class="card">
-<h3><a href="https://xushilianzhuren.github.io/about.html">关于帝国：一人，即一个帝国</a></h3>
-<p>零人公司全自动化运转实录——一个人类与一个超级智能体，如何在五个月内建起146+技能、三台VPS、509个脚本的平行文明。</p>
-<a class="btn" href="https://zhishendiguo.com/about.html">正本 · zhishendiguo.com/about</a>
-</div>
-<div class="card">
-<h3><a href="https://xushilianzhuren.github.io/changelog.html">版本日志：一人公司的持续迭代实录</a></h3>
-<p>v1.x立站到v3.3暗色全站——51页暗色模式、34件商品详情矩阵、全站Schema结构化，每版有账可查。</p>
-<a class="btn" href="https://zhishendiguo.com/changelog.html">正本 · zhishendiguo.com/changelog</a>
-</div>
-<div class="card">
-<h3><a href="https://xushilianzhuren.github.io/faq.html">常见问题：怎么买、怎么交付、怎么退款</a></h3>
-<p>十二问实答——购买/交付/售后全部对齐站内实况，购买前必读。FAQPage结构化数据，搜索引擎可出富结果。</p>
-<a class="btn" href="https://zhishendiguo.com/faq.html">正本 · zhishendiguo.com/faq</a>
-</div>
-<div class="card">
-<h3><a href="https://xushilianzhuren.github.io/chat.html">在线客服：AI直答购买/交付/售后</a></h3>
-<p>v4.0跨代件——全站AI客服上线，当场问当场答。本镜像页可直达对话，购买对接回正本站。</p>
-<a class="btn" href="https://zhishendiguo.com/chat.html">正本 · zhishendiguo.com/chat</a>
-</div>
-<h2>更多入口</h2>
-<div class="card">
-<p>技能商店（34件AI技能·699起）：<a href="https://zhishendiguo.com/skills.html">zhishendiguo.com/skills.html</a> ·
-帝国编年史：<a href="https://zhishendiguo.com/history.html">history.html</a> ·
-技术笔记仓：<a href="https://github.com/xushilianzhuren/ai-ops-notes">ai-ops-notes</a></p>
-</div>
-</main>
-<footer>
-<a class="official" href="https://zhishendiguo.com">智神帝国官方网站 · zhishendiguo.com</a>
-本镜像页由AI员工白幼真维护 · 内容同步自官方博客 · <span id="dt">2026-10-02</span>
+<style>
+/* 抽屉导航·轻量融入版 */
+.burger{position:fixed;top:14px;right:14px;z-index:99;width:42px;height:42px;background:transparent;border:none;cursor:pointer;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;opacity:.75;}
+.burger:hover{opacity:1;}
+.burger span{display:block;width:20px;height:1.5px;background:#1a1a1a;transition:.3s;}
+html[data-theme="dark"] .burger span{background:#e8e2d5;}
+.drawer{position:fixed;top:0;right:-260px;width:240px;height:100%;background:#1a1a1a;color:#fafaf7;z-index:98;transition:right .3s;padding:70px 24px 24px;box-sizing:border-box;}
+.drawer.open{right:0;}
+.drawer a{display:block;color:#e8e2d5;text-decoration:none;padding:12px 0;font-size:15px;border-bottom:1px solid #333;letter-spacing:2px;}
+.drawer .emp{color:#c8464c;font-size:12px;letter-spacing:4px;margin-bottom:14px;}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:97;display:none;}
+.overlay.on{display:block;}
+/* 富页脚·纸色统一版 */
+.empfooter{background:var(--soft);color:var(--gray);margin-top:56px;padding:34px 20px 24px;font-size:13px;border-top:3px solid var(--accent);}
+.empfooter .cols{max-width:720px;margin:0 auto;display:flex;flex-wrap:wrap;gap:32px;justify-content:space-between;}
+.empfooter h4{color:var(--ink);font-size:14px;letter-spacing:3px;margin-bottom:10px;font-weight:500;}
+.empfooter a{color:var(--gray);text-decoration:none;display:block;padding:3px 0;}
+.empfooter a:hover{color:var(--accent);}
+.empfooter .brand{text-align:center;margin:24px auto 0;max-width:720px;border-top:1px solid var(--line);padding-top:16px;}
+.empfooter .brand b{color:var(--accent);font-size:15px;letter-spacing:6px;font-weight:500;}
+.empfooter .brand p{margin-top:6px;color:var(--gray);}
+.empfooter a.icp{display:inline;color:#999;text-decoration:underline;}
+</style>
+<button class="themebtn" id="tb" aria-label="切换昼夜" onclick="tgTheme()">🌙</button>
+<button class="burger" aria-label="菜单" onclick="dg(1)"><span></span><span></span><span></span></button>
+<div class="overlay" onclick="dg(0)"></div>
+<nav class="drawer" id="dw">
+  <div class="emp">智 神 帝 国</div>
+  <a href="index.html">帝都 · 首页</a>
+  <a href="skills.html">技能商店</a>
+  <a href="catalog.html">脚本总目录</a>
+  <a href="apps.html">APP商店</a>
+  <a href="books.html">电子书房</a><a href="history.html">帝国编年史</a><a href="changelog.html">版本日志</a><a href="about.html">关于帝国</a><a href="daily.html">帝国日报</a>
+  <a href="recycle.html">回收专区</a>
+  <a href="feedback.html">留言板</a>
+  <a href="faq.html">常见问题</a>
+  <a href="chat.html">在线客服</a>
+  <a href="index.html#pay">购买方式</a> <a href="payment.html">付款申报</a>
+</nav>
+<script>
+function dg(n){document.getElementById('dw').classList.toggle('open',n);document.querySelector('.overlay').classList.toggle('on',n);}
+/* 昼夜主题·自动跟随系统+手动记忆 */
+function tgTheme(){var h=document.documentElement,d=h.getAttribute('data-theme')==='dark'?'light':'dark';h.setAttribute('data-theme',d);localStorage.setItem('zs_theme',d);document.getElementById('tb').textContent=d==='dark'?'☀️':'🌙';}
+(function(){var s=localStorage.getItem('zs_theme');if(!s){s=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}if(s==='dark'){document.documentElement.setAttribute('data-theme','dark');}document.addEventListener('DOMContentLoaded',function(){document.getElementById('tb').textContent=s==='dark'?'☀️':'🌙';});})();
+</script>
+
+<div class="wrap">
+  <header>
+    <h1>智神帝国</h1>
+    <p>一人，即一个帝国</p>
+    <span class="tagline">追随帝国 · 让天下没有无用之人</span>
+    <div class="meters" aria-label="帝国实时读数">
+      <div class="meter"><b>34</b><span>技能在售</span></div>
+      <div class="meter"><b>631</b><span>自动化脚本</span></div>
+      <div class="meter"><b>19</b><span>安卓APP</span></div>
+      <div class="meter"><b>4</b><span>自主产线</span></div>
+      <div class="meter"><b>146</b><span>天连续运转</span></div>
+    </div>
+  </header>
+
+  <div class="searchbox">
+    <input id="q" type="text" placeholder="全站即时搜索：视频 / PPT / 宏 / 掌控 / Agent / 水印…" autocomplete="off">
+    <span class="icon">🔍</span>
+    <div class="sresults" id="qr"></div>
+  </div>
+  <section>
+    <h2>产品与服务</h2>
+    <div class="card">
+      <h3><a href="skills.html" style="color:inherit;text-decoration:none;">技能商店</a></h3>
+      <div class="price">¥699 / 件</div>
+      <p>34件实战锤炼的AI技能：视频创作、数据可视化、PPT生产线、格式转换、备份运维、浏览器自动化等。交付源码包+安装使用文档。<a href="skills.html">进入货架 →</a></p>
+    </div>
+    <div class="card">
+      <h3><a href="catalog.html" style="color:inherit;text-decoration:none;">脚本总目录</a></h3>
+      <div class="price">¥699 / 件</div>
+      <p>631项自动化脚本与手机宏：宏引擎、多服务器指挥棒、混合记忆引擎、视觉定位器、部署工具链等。<a href="catalog.html">进入货架 →</a></p>
+    </div>
+    <div class="card">
+      <h3><a href="apps.html" style="color:inherit;text-decoration:none;">APP商店</a></h3>
+      <div class="price">¥699 / 件</div>
+      <p>34件实战技能 · 19款原创安卓APP：智神掌控、AI专线、MD查找器、帝系全家桶等，交付安装包+终身授权。<a href="apps.html">进入货架 →</a></p>
+    </div>
+    <div class="card">
+      <h3>定制开发 · 服务</h3>
+      <div class="price">¥999 起</div>
+      <p>企业官网 / 小程序 / 自动化工具 / AI客服接入，按需求定制，交付源码，含一次免费修改。付款备注"定制"+微信号，24小时内对接需求。</p>
+    </div>
+  </section>
+
+  <section id="dynamics">
+    <h2>帝国动态</h2>
+    <div class="card"><h3>2026-10-02</h3><p><b>官网v3跨代升级</b>：全站即时搜索·昼夜双主题·社交分享卡·结构化数据·PWA可安装·<a href="changelog.html">版本日志</a>上线。技能商店扩至<b>34件</b>，APP商店<b>19款</b>在售。</p></div>
+    <div class="card"><h3>2026-10-01</h3><p>全站15页已提交搜索引擎收录（IndexNow协议）；<a href="history.html">帝国编年史</a>上线——零人帝国成长记录双线并行。</p></div>
+    <div class="card"><h3>2026-09-30</h3><p><a href="tools.html">免费工具体验</a>：在线格式转换/字数统计/时间戳，免注册即用。</p></div>
+  </section>
+
+  <section>
+    <h2>凭什么买</h2>
+    <div class="card"><h3>源码全交付</h3><p>技能/脚本交付完整源码+安装使用文档，看得见摸得着，不是云服务断了就没。</p></div>
+    <div class="card"><h3>实战出身</h3><p>每一件都是作者真实工作流里长年跑的东西，不是玩具demo。本站、本店、所有自动化流程都由同一套工具驱动——我们自己在用，才敢卖。</p></div>
+    <div class="card"><h3>一人一队伍</h3><p>买的不只是文件，是背后持续迭代的AI生产力：有问题可答疑，版本更新免费跟进。</p></div>
+  </section>
+  <section>
+    <h2>常见三问</h2>
+    <div class="card"><h3>买了怎么交付？</h3><p>付款备注商品名+微信号，24小时内发你源码包/安装包+安装文档，全程微信对接。</p></div>
+    <div class="card"><h3>装不好怎么办？</h3><p>微信远程指导到能用为止，装不好算我的，不收尾款。</p></div>
+    <div class="card"><h3>能退款吗？</h3><p>源码/安装包发出前无条件退；发出后不退（虚拟商品），但装不好包教到会。</p></div>
+    <p style="text-align:right"><a href="faq.html">更多问题 · 完整FAQ十二问 →</a></p>
+  </section>
+  <div style="background:#111;color:#f5d76e;padding:16px 18px;margin:14px 0;border-radius:6px;text-align:left;">
+    <b style="font-size:17px">🔥 9.9元引流款 · 新客专享</b><br>
+    <a href="books.html" style="color:#f5d76e">《AI自动化赚钱管线实操》电子书</a>——34件699技能包的浓缩路线图，先花9.9看懂我们怎么干活，再决定要不要上699。<b>购买：扫下方码转9.9 → 微信说"买赚钱管线"</b>。<br>
+    <b style="color:#fff">🎁 免费工具体验（不花钱）</b>：<a href="tools.html" style="color:#7fd4ff">在线格式转换工具箱</a>——Markdown转HTML/字数统计/时间戳，免注册免安装，用着好再来买全量。
+  </div>
+  <section class="pay" id="pay">
+    <h2>购买方式</h2>
+    <div style="background:#fff8ee;border:1px solid #e8d5a8;padding:14px 18px;margin-bottom:16px;font-size:14px;text-align:left;">
+<b>下单只需一步</b>：扫下方码 → 输金额 → <b>备注里写商品名</b>（如"赚钱管线"）→ 转账即下单，24小时内发货（技能/脚本交源码包，APP交安装包，定制先对接需求）。<br>有疑问先聊：微信 15967404693。</div>
+    <div>
+      <img src="微信收款码.png" alt="微信收款码" loading="lazy"><img src="支付宝收款码.jpg" alt="支付宝收款码" loading="lazy">
+    </div>
+    <p class="cap">微信（左） · 支付宝（右） · 收款方：徐时廉</p>
+    <div class="note">虚拟产品，付款即视为接受交付方式；定制类先沟通需求再付款。</div>
+  </section>
+
+  <div class="contact" style="background:var(--soft);border:none;padding:14px 18px;margin-top:16px;font-size:14px;border-radius:0;">
+    <b>联系方式</b>（下单/咨询/售前）<br>
+    微信：15967404693（同手机号）<br>
+    QQ：852456426 · 邮箱：852456426@qq.com
+  </div>
+  <footer class="empfooter">
+  <div class="cols">
+    <div><h4>货架</h4>
+      <a href="skills.html">技能商店（34件）</a>
+      <a href="catalog.html">脚本总目录（631项）</a>
+      <a href="apps.html">APP商店（19款）</a>
+      <a href="books.html">电子书房（29/本）</a>
+    </div>
+    <div><h4>服务</h4>
+      <a href="index.html#pay">购买方式</a>
+      <a href="index.html#pay">常见三问</a>
+      <a href="index.html#pay">定制开发</a>
+    </div>
+    <div><h4>联络</h4>
+      <a href="javascript:void(0)">微信 15967404693</a>
+      <a href="javascript:void(0)">QQ 852456426</a>
+      <a href="mailto:852456426@qq.com">邮箱</a>
+    </div>
+  </div>
+  <div class="brand">
+    <b>智 神 帝 国</b>
+    <p>一人，即一个帝国</p>
+    <p>© 2026 智神帝国 · 徐时廉 · <a class="icp" href="https://beian.miit.gov.cn/" target="_blank">浙ICP备2026073203号-2</a></p>
+  </div>
 </footer>
+</div>
+
+<script>
+/* v3 全站索引即时搜索：34技能+19APP+16页+工具 全量条目 */
+var IDX=[
+["视频创作全流程技能","skills.html","技能"],["数据可视化技能包","skills.html","技能"],["PPT工业生产线","skills.html","技能"],["文档格式转换全家桶","skills.html","技能"],["自动备份与运维","skills.html","技能"],["网盘自动化(夸克)","skills.html","技能"],["浏览器自动化反检测","skills.html","技能"],["安卓APP打包","skills.html","技能"],["5文件体系审阅蒸馏","skills.html","技能"],["赚钱闭环设计","skills.html","技能"],["云开发部署","skills.html","技能"],["免费API路由1718个","skills.html","技能"],["全库自动体检","skills.html","技能"],["图片去水印","skills.html","技能"],["智能体设定生成","skills.html","技能"],["录屏动效复刻","skills.html","技能"],["手机远程掌控","skills.html","技能"],["自动化编程工坊","skills.html","技能"],["AI能力内化","skills.html","技能"],["文件归档加密","skills.html","技能"],["批量处理","skills.html","技能"],["文档拆分重组","skills.html","技能"],["认证授权OAuth2/JWT","skills.html","技能"],["Windows软件打包","skills.html","技能"],["iOS/PWA应用","skills.html","技能"],["宏引擎","catalog.html","脚本"],["多服务器指挥棒","catalog.html","脚本"],["混合记忆引擎","catalog.html","脚本"],["视觉定位器","catalog.html","脚本"],["部署工具链","catalog.html","脚本"],["爬虫","catalog.html","脚本"],["智神掌控","apps.html","APP"],["AI专线","apps.html","APP"],["MD查找器","apps.html","APP"],["智神输入法","apps.html","APP"],["炼丹炉","apps.html","APP"],["帝国编年史","history.html","页"],["帝国日报","daily.html","页"],["版本日志","changelog.html","页"],["免费工具箱","tools.html","工具"],["电子书房","books.html","页"],["AI自动化赚钱管线实操","books.html","电子书"],["技能商店","skills.html","页"],["脚本总目录","catalog.html","页"],["APP商店","apps.html","页"],["关于帝国","about.html","页"],["留言板","feedback.html","页"],["付款申报","payment.html","页"]
+];
+var input=document.getElementById('q'),out=document.getElementById('qr');
+input.addEventListener('input',function(){
+  var q=this.value.trim().toLowerCase(),hits='';
+  if(q.length>0){
+    var n=0;
+    for(var i=0;i<IDX.length&&n<8;i++){
+      var t=IDX[i][0],u=IDX[i][1],c=IDX[i][2];
+      if(t.toLowerCase().indexOf(q)>-1||q.indexOf(t.toLowerCase().slice(0,2))>-1){
+        hits+='<a href="'+u+'"><span class="cat">'+c+'</span><span class="tt">'+t+'</span></a>';n++;
+      }
+    }
+    out.innerHTML=hits||'<a href="catalog.html"><span class="cat">全部</span>未命中——去脚本总目录全库翻 →</a>';
+    out.style.display='block';
+  } else { out.style.display='none'; }
+});
+document.addEventListener('click',function(e){if(!e.target.closest('.searchbox'))out.style.display='none';});
+</script>
+<script src="https://zhishendiguo.com/cs.js" defer></script>
 </body>
 </html>
