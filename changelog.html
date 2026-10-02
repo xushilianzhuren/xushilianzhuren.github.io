@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>智神帝国版本日志 · 一人公司的持续迭代实录（镜像）</title>
+<meta name="description" content="智神帝国官网版本日志镜像：v1.x立站到v3.3暗色全站，每版有账可查——51页暗色模式、34件商品详情矩阵、全站Schema结构化。一人，即一个帝国。原文 zhishendiguo.com/changelog">
+<link rel="canonical" href="https://zhishendiguo.com/changelog.html">
+<style>
+:root{--paper:#f5f0e6;--ink:#2b2b2b;--red:#8c2f24;--gold:#a0844a;--bg:#efe8d8}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:"Songti SC","Noto Serif SC",serif;line-height:1.8;max-width:820px;margin:0 auto;padding:40px 24px}
+header{border-bottom:3px double var(--gold);padding-bottom:20px;margin-bottom:32px}
+h1{font-size:1.9em;color:var(--red);letter-spacing:2px}
+.sub{color:var(--gold);margin-top:6px;font-size:.95em}
+main h2{font-size:1.2em;color:var(--red);border-left:4px solid var(--gold);padding-left:10px;margin:34px 0 10px}
+.card{background:var(--paper);border:1px solid #d8ccb4;border-radius:4px;padding:18px 20px;margin:14px 0;transition:box-shadow .2s}
+.card:hover{box-shadow:0 2px 12px rgba(140,47,36,.15)}
+.card h3{font-size:1.08em;margin-bottom:8px;color:var(--ink)}
+.card h3 .tag{font-size:.72em;color:var(--gold);margin-left:8px;letter-spacing:1px}
+.vlist{margin:8px 0 6px 1.4em}
+.vlist li{font-size:.92em;margin:6px 0;color:#4a443a}
+.src{font-size:.85em;margin-top:10px}
+.src a{color:var(--red)}
+a{color:var(--ink);text-decoration:none}
+a.btn{display:inline-block;color:var(--red);border:1px solid var(--red);padding:3px 14px;text-decoration:none;font-size:.88em;border-radius:2px}
+a.btn:hover{background:var(--red);color:var(--paper)}
+footer{margin-top:44px;padding-top:16px;border-top:1px solid #d8ccb4;font-size:.82em;color:#8a7f6e;text-align:center}
+.official{display:block;text-align:center;margin:6px 0 2px;color:var(--red);font-weight:bold;font-size:1.05em;text-decoration:none}
+</style>
+</head>
+<body>
+<header>
+<h1>智神帝国 · 版本日志</h1>
+<div class="sub">每一次迭代都有账可查 · 本页为镜像，正本：<a href="https://zhishendiguo.com/changelog.html">zhishendiguo.com/changelog.html</a></div>
+</header>
+<main>
+<h2>版本迭代史（镜像同步 2026-10-02）</h2>
+<div class="card">
+<h3>v3.3 <span class="tag">2026-10-02 · 暗色全站</span></h3>
+<ul class="vlist">
+<li>【主题】暗色模式覆盖全站51页：右上角一键切换昼夜，自动跟随系统偏好，跨页面记忆保持——夜间浏览34件商品详情/博客/编年史不再刺眼</li>
+<li>【防闪】主题初始化前置到头部脚本，刷新页面零白闪（FOUC）</li>
+</ul>
+<p class="src">正本：<a href="https://zhishendiguo.com/changelog.html">zhishendiguo.com/changelog</a></p>
+</div>
+<div class="card">
+<h3>v3.2 <span class="tag">2026-10-02 · 商品矩阵</span></h3>
+<ul class="vlist">
+<li>【详情页】34件技能商品详情页全量上线：长尾词标题+Schema Product结构化数据+FAQ问答+相关推荐内链网+面包屑导航+直达收款</li>
+<li>【收录】sitemap 17→51条·IndexNow 35条URL提交</li>
+</ul>
+<p class="src">正本：<a href="https://zhishendiguo.com/changelog.html">zhishendiguo.com/changelog</a></p>
+</div>
+<div class="card">
+<h3>v3.0 <span class="tag">2026-10-02 · 跨代升级</span></h3>
+<ul class="vlist">
+<li>【搜索】全站即时搜索引擎：34技能+19APP+16页+工具全量索引，输入即出结果，零后端零等待</li>
+<li>【主题】昼夜双主题：自动跟随系统+手动切换+记忆偏好，夜间阅读不刺眼</li>
+<li>【分享】全站Open Graph+Twitter Card社交分享卡，微信/推特分享不再是裸链接</li>
+<li>【SEO】Schema.org结构化数据全站注入（Organization/WebSite+SearchAction/FAQPage/Product）——搜索引擎可读懂"这是一个商店、这些是商品、这些是问答"</li>
+<li>【PWA】manifest.json上线——手机浏览器可将官网"添加到主屏幕"当APP用</li>
+<li>【性能】收款码图片懒加载，首屏更快</li>
+<li>【信任】首页新增帝国实时读数徽章条（技能/脚本/APP/产线/运转天数）</li>
+<li>【账本】本页上线——版本日志从此每版有账</li>
+</ul>
+<p class="src">正本：<a href="https://zhishendiguo.com/changelog.html">zhishendiguo.com/changelog</a></p>
+</div>
+<div class="card">
+<h3>v2.2 <span class="tag">2026-10-02 · 收录基建</span></h3>
+<ul class="vlist">
+<li>IndexNow协议全站16URL提交——Bing/Yandex/Seznam收录通道打开</li>
+<li>robots.txt+sitemap.xml部署</li>
+<li>GitHub Pages镜像站上线（xushilianzhuren.github.io·编年史镜像页同步）</li>
+<li>技术笔记仓ai-ops-notes开仓：3篇运维实录全文镜像</li>
+</ul>
+<p class="src">正本：<a href="https://zhishendiguo.com/changelog.html">zhishendiguo.com/changelog</a></p>
+</div>
+<div class="card">
+<h3>v2.1 <span class="tag">2026-10-02 · 商店扩容</span></h3>
+<ul class="vlist">
+<li>APP商店页上线：19款安卓APP官方分发位立，APK单点分发升级为商店</li>
+<li>技能商店扩至34件（699/件·源码全交付）</li>
+<li>首页"帝国动态"位上线</li>
+</ul>
+<p class="src">正本：<a href="https://zhishendiguo.com/changelog.html">zhishendiguo.com/changelog</a></p>
+</div>
+<div class="card">
+<h3>v2.0 <span class="tag">2026-10-01 · 内容矩阵</span></h3>
+<ul class="vlist">
+<li>帝国编年史上线：建元至今大事记双线并行，只增不删</li>
+<li>关于页+日报页上线，sitemap补录，SEO地基核验通过</li>
+<li>第四篇技术博客《AI值班实录：COS七连败与一个藏了3小时的404》发布</li>
+</ul>
+<p class="src">正本：<a href="https://zhishendiguo.com/changelog.html">zhishendiguo.com/changelog</a></p>
+</div>
+<div class="card">
+<h3>v1.x <span class="tag">2026-09-20起 · 立站</span></h3>
+<ul class="vlist">
+<li>2026-09-20：智神帝国官方网站 zhishendiguo.com 上线，门面立</li>
+<li>技能商店/脚本总目录/电子书房/工具箱/付款申报/回收专区相继开架</li>
+</ul>
+<p class="src">正本：<a href="https://zhishendiguo.com/changelog.html">zhishendiguo.com/changelog</a></p>
+</div>
+<h2>更多入口</h2>
+<div class="card">
+<p>技能商店（34件AI技能·699起）：<a href="https://zhishendiguo.com/skills.html">zhishendiguo.com/skills.html</a> ·
+帝国编年史：<a href="https://zhishendiguo.com/history.html">history.html</a> ·
+技术博客镜像：<a href="https://xushilianzhuren.github.io/">本镜像站首页</a> ·
+技术笔记仓：<a href="https://github.com/xushilianzhuren/ai-ops-notes">ai-ops-notes</a></p>
+</div>
+</main>
+<footer>
+<a class="official" href="https://zhishendiguo.com">智神帝国官方网站 · zhishendiguo.com</a>
+本镜像页由AI员工白幼真维护 · 内容同步自官方版本日志 · 2026-10-02
+</footer>
+</body>
+</html>
