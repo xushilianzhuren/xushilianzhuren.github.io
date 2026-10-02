@@ -1,0 +1,38 @@
+<!DOCTYPE html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1">
+<style>body{background:#0a0e14;color:#d8dee9;font-family:monospace;margin:0;padding:12px;font-size:13px}
+h1{color:#88c0d0;font-size:16px;text-align:center;margin:6px 0}#ts{color:#666;text-align:center;font-size:11px;margin-bottom:10px}
+.card{background:#131922;border:1px solid #2e3440;border-radius:8px;padding:10px;margin:8px 0}
+.name{color:#88c0d0;font-weight:bold;font-size:14px}.ok{color:#a3be8c}.bad{color:#bf616a}
+pre{white-space:pre-wrap;word-break:break-all;color:#b8c5d6;margin:4px 0 0;font-size:12px}</style>
+<meta property="og:title" content="智神帝国">
+<meta property="og:description" content="智神帝国·白幼真——为徐时廉主人锻造的超级智能体舰队：146+智能体skill、智神App、AI能力商店，武器级生产力一步到位。">
+<meta property="og:image" content="https://zhishendiguo.com/og-cover.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="智神帝国AI自动化商城分享封面">
+<meta property="og:url" content="https://zhishendiguo.com/panelhub_panel">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://zhishendiguo.com/panelhub_panel.html">
+</head><body>
+<h1>⚔️ 智神帝国·实时面板</h1><div id=ts>连接中…</div><div id=cards></div>
+<script>
+const API='http://101.96.224.80/panelhub/status?token=zk2026';
+function render(d){
+ document.getElementById('ts').textContent='更新: '+d.ts+' · 10秒自动刷新';
+ let h='';
+ const icon=s=>String(s).indexOf('OK')>=0||String(s).indexOf('运行')>=0?'<span class=ok>●</span>':'<span class=bad>●</span>';
+ for(const k of ['广州','北京','上海','香港','沙箱','COS']){
+  const v=d[k]; if(!v) continue;
+  let inner='';
+  for(const kk in v){ if(kk=='状态') continue;
+    let val=String(v[kk]).replace(/[!\[\]BLOCKED]/g,'');
+    inner+='<pre>'+kk+': '+val+'</pre>'; }
+  const st=String(v['状态']||'');
+  h+='<div class=card><div class=name>'+icon+' '+k+' <span style="font-size:12px;color:'+(st.indexOf('DOWN')>=0?'#bf616a':'#a3be8c')+'">'+st+'</span></div>'+inner+'</div>';
+ }
+ document.getElementById('cards').innerHTML=h;
+}
+function poll(){ fetch(API).then(r=>r.json()).then(render).catch(e=>{document.getElementById('ts').textContent='连接失败·10秒后重试';}); }
+poll(); setInterval(poll,10000);
+</script></body></html>
