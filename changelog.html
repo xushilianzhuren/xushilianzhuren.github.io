@@ -82,6 +82,8 @@ function tgTheme(){var h=document.documentElement,d=h.getAttribute('data-theme')
 </header>
 
 <div class="ver">
+  <h2>v4.0.3<span class="tag">2026-10-02</span><span class="tag">索引修复+流量可见</span></h2>
+  <p>镜像同步器IndexNow修复：v2.0首跑59页提交全部422——根因确诊为host参数与URL域名不匹配（host误填主站域名、URL为镜像域名），非批量大小。修复后59页全量分三批提交全200，镜像站整站进入索引队列（此前v2.0一条未进）。同批：官网巡检器v1.0上线——七路curl+APK+镜像+广州六服务+磁盘+流量读数（清洗pv/uv）一条命令全出，每班巡检自动带流量账（总PV 11689/真实UV 1049/今日1055），迭代效果从此有数可对。</p>
   <h2>v4.0.2<span class="tag">2026-10-02</span><span class="tag">安全加固</span></h2>
   <p>统计安全加固：pv_stats.json外网403封禁——访客IP清单与流量结构不再对公网裸奔，统计读数转入内部巡检通道（每班巡检自动带pv/uv读数）。同批：移动端主题按钮与汉堡菜单重叠热修（51页主题按钮统一移至左上，移动端右上角还给菜单），今日wp-admin扫描流量491次已由v4.0.1品牌化404页全部接住。</p>
 
