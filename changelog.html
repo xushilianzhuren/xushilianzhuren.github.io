@@ -82,6 +82,8 @@ function tgTheme(){var h=document.documentElement,d=h.getAttribute('data-theme')
 </header>
 
 <div class="ver">
+  <h2>v4.0.4<span class="tag">2026-10-02</span><span class="tag">压缩+DNS事故修复</span></h2>
+  <p>全站压缩传输上线：Caddy启用zstd+gzip双编码，HTML平均体积降60%+（首页20.8KB→8.2KB，双端生效）——弱网/移动端加载显著提速。同批修复DNS生产事故：主域名曾被误加双A记录（南京节点443无网站服务），约一半访客直接打不开官网2小时——已删除死记录，解析收敛至主站单点，九路复测全200。邮箱套件（MX/SPF/DMARC）保留未动。</p>
   <h2>v4.0.3<span class="tag">2026-10-02</span><span class="tag">索引修复+流量可见</span></h2>
   <p>镜像同步器IndexNow修复：v2.0首跑59页提交全部422——根因确诊为host参数与URL域名不匹配（host误填主站域名、URL为镜像域名），非批量大小。修复后59页全量分三批提交全200，镜像站整站进入索引队列（此前v2.0一条未进）。同批：官网巡检器v1.0上线——七路curl+APK+镜像+广州六服务+磁盘+流量读数（清洗pv/uv）一条命令全出，每班巡检自动带流量账（总PV 11689/真实UV 1049/今日1055），迭代效果从此有数可对。</p>
   <h2>v4.0.2<span class="tag">2026-10-02</span><span class="tag">安全加固</span></h2>
