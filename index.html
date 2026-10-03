@@ -8,6 +8,9 @@
 <meta name="theme-color" content="#8a1f1f">
 <link rel="apple-touch-icon" href="https://zhishendiguo.com/apple-touch-icon.png">
 <link rel="manifest" href="manifest.json">
+<link rel="alternate" hreflang="en" href="https://zhishendiguo.com/index-en.html">
+<link rel="alternate" hreflang="zh-CN" href="https://zhishendiguo.com/">
+<link rel="alternate" hreflang="x-default" href="https://zhishendiguo.com/">
 <!-- Open Graph / 社交分享卡 -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="智神帝国">
@@ -69,6 +72,8 @@
   /* 主题切换 */
   .themebtn{position:fixed;top:14px;left:14px;z-index:99;width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:var(--card);cursor:pointer;font-size:18px;opacity:.8;}
   .themebtn:hover{opacity:1;}
+  .langbtn{position:fixed;top:14px;right:64px;z-index:99;width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:var(--card);cursor:pointer;font-size:14px;font-weight:600;opacity:.8;color:var(--ink);}
+  .langbtn:hover{opacity:1;}
   @media(max-width:480px){header h1{font-size:26px;letter-spacing:5px;}.pay img{width:150px;height:150px;}}
 </style>
 
@@ -107,6 +112,7 @@ html[data-theme="dark"] .burger span{background:#e8e2d5;}
 .empfooter a.icp{display:inline;color:#999;text-decoration:underline;}
 </style>
 <button class="themebtn" id="tb" aria-label="切换昼夜" onclick="tgTheme()">🌙</button>
+<button class="langbtn" aria-label="English site" onclick="location.href='index-en.html'">EN</button>
 <button class="burger" aria-label="菜单" onclick="dg(1)"><span></span><span></span><span></span></button>
 <div class="overlay" onclick="dg(0)"></div>
 <nav class="drawer" id="dw">
@@ -118,6 +124,7 @@ html[data-theme="dark"] .burger span{background:#e8e2d5;}
   <a href="books.html">电子书房</a><a href="history.html">帝国编年史</a><a href="changelog.html">版本日志</a><a href="about.html">关于帝国</a><a href="daily.html">帝国日报</a>
   <a href="recycle.html">回收专区</a>
   <a href="feedback.html">留言板</a>
+  <a href="index-en.html">English Site ↗</a>
   <a href="faq.html">常见问题</a>
   <a href="chat.html">在线客服</a>
   <a href="index.html#pay">购买方式</a> <a href="payment.html">付款申报</a>
