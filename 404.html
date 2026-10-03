@@ -7,6 +7,7 @@
 <meta name="description" content="页面不存在或已迁移。回到智神帝国首页，或直接找在线客服。">
 <meta name="robots" content="noindex">
 <meta name="theme-color" content="#8a1f1f">
+<link rel="apple-touch-icon" href="https://zhishendiguo.com/apple-touch-icon.png">
 <link rel="manifest" href="manifest.json">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="智神帝国">
@@ -105,5 +106,8 @@ function toggleTheme(){
 }
 </script>
 <script src="/cs.js"></script>
+<script>
+if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('/sw.js').catch(function(){});});}
+</script>
 </body>
 </html>
