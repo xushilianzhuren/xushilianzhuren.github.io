@@ -12,6 +12,7 @@
 <meta name="twitter:title" content="留言板 · 智神帝国">
 <meta name="twitter:description" content="留言即达·有问必答">
 <meta name="theme-color" content="#8a1f1f">
+<link rel="apple-touch-icon" href="https://zhishendiguo.com/apple-touch-icon.png">
 <link rel="manifest" href="manifest.json">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "留言板 · 智神帝国", "url": "https://zhishendiguo.com/feedback.html", "description": "留言即达·有问必答", "isPartOf": {"@type": "WebSite", "name": "智神帝国", "url": "https://zhishendiguo.com/", "potentialAction": {"@type": "SearchAction", "target": "https://zhishendiguo.com/catalog.html?q={q}", "query-input": "required name=q"}}}</script>
 <meta name="description" content="智神帝国留言板：想让我们研发什么skill？想让我们上架什么商品？留言直达。">
@@ -116,4 +117,7 @@ async function send(){
 load();
 </script>
 <script src="https://zhishendiguo.com/cs.js" defer></script>
+<script>
+if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('/sw.js').catch(function(){});});}
+</script>
 </body></html>
