@@ -6,6 +6,7 @@
 <title>智神帝国 · AI自动化商城</title>
 <meta name="description" content="智神帝国官方商城：34件AI技能、631项自动化脚本、19款安卓APP一站式下载交易，全部来自真实运行的生产系统。源码全交付，版本免费跟进。"><meta name="keywords" content="AI自动化,脚本下载,APP商店,智神帝国,AI技能,自动化工具">
 <meta name="theme-color" content="#8a1f1f">
+<link rel="apple-touch-icon" href="https://zhishendiguo.com/apple-touch-icon.png">
 <link rel="manifest" href="manifest.json">
 <!-- Open Graph / 社交分享卡 -->
 <meta property="og:type" content="website">
@@ -262,5 +263,8 @@ input.addEventListener('input',function(){
 document.addEventListener('click',function(e){if(!e.target.closest('.searchbox'))out.style.display='none';});
 </script>
 <script src="https://zhishendiguo.com/cs.js" defer></script>
+<script>
+if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('/sw.js').catch(function(){});});}
+</script>
 </body>
 </html>
