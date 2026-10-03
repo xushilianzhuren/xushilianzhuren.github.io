@@ -15,6 +15,7 @@
 <meta name="twitter:title" content="常见问题 · 智神帝国">
 <meta name="twitter:description" content="怎么买、怎么交付、怎么退款——十二问实答，购买前必读。">
 <meta name="theme-color" content="#8a1f1f">
+<link rel="apple-touch-icon" href="https://zhishendiguo.com/apple-touch-icon.png">
 <link rel="manifest" href="manifest.json">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "常见问题 · 智神帝国", "url": "https://zhishendiguo.com/faq.html", "description": "购买/交付/售后十二问实答", "isPartOf": {"@type": "WebSite", "name": "智神帝国", "url": "https://zhishendiguo.com/", "potentialAction": {"@type": "SearchAction", "target": "https://zhishendiguo.com/catalog.html?q={q}", "query-input": "required name=q"}}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
@@ -112,5 +113,8 @@ html[data-theme="dark"] .buyhint{background:rgba(184,134,11,.08);border-color:#8
 <footer>智神帝国 · zhishendiguo.com · <a href="index.html">返回首页</a></footer>
 </main>
 <script src="https://zhishendiguo.com/cs.js" defer></script>
+<script>
+if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('/sw.js').catch(function(){});});}
+</script>
 </body>
 </html>
