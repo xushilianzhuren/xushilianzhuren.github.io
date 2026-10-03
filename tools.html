@@ -10,6 +10,7 @@
 <meta name="twitter:title" content="免费工具箱 · 智神帝国">
 <meta name="twitter:description" content="在线即用免费小工具：格式转换/字数统计/时间戳，免注册">
 <meta name="theme-color" content="#8a1f1f">
+<link rel="apple-touch-icon" href="https://zhishendiguo.com/apple-touch-icon.png">
 <link rel="manifest" href="manifest.json">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "免费工具箱 · 智神帝国", "url": "https://zhishendiguo.com/tools.html", "description": "在线即用免费小工具：格式转换/字数统计/时间戳，免注册", "isPartOf": {"@type": "WebSite", "name": "智神帝国", "url": "https://zhishendiguo.com/", "potentialAction": {"@type": "SearchAction", "target": "https://zhishendiguo.com/catalog.html?q={q}", "query-input": "required name=q"}}}</script>
 <meta name="description" content="智神帝国免费工具箱：在线即用的实用小工具合集，无需注册，打开就用。"><meta name="keywords" content="AI自动化,脚本下载,APP商店,智神帝国">
@@ -80,4 +81,7 @@ function stat(){var v=document.getElementById('cnt').value;
  var cn=(v.match(/[\u4e00-\u9fff]/g)||[]).length,en=(v.match(/[a-zA-Z]+/g)||[]).length;
  document.getElementById('statout').textContent='汉字：'+cn+' · 英文单词：'+en+' · 总字符：'+v.length+' · UTF-8字节：'+new Blob([v]).size}
 </script><script src="https://zhishendiguo.com/cs.js" defer></script>
+<script>
+if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('/sw.js').catch(function(){});});}
+</script>
 </body></html>
