@@ -8,11 +8,13 @@
   "theme_color": "#8a1f1f",
   "lang": "zh-CN",
   "icons": [
-    {
-      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'%3E%3Crect width='192' height='192' fill='%238a1f1f'/%3E%3Ctext x='96' y='118' font-size='72' text-anchor='middle' fill='%23f5d76e' font-family='serif'%3E帝%3C/text%3E%3C/svg%3E",
-      "sizes": "192x192",
-      "type": "image/svg+xml",
-      "purpose": "any"
-    }
+    {"src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any"},
+    {"src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any"},
+    {"src": "/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"}
+  ],
+  "shortcuts": [
+    {"name": "AI技能", "url": "/skills/", "icons": [{"src": "/icon-192.png", "sizes": "192x192"}]},
+    {"name": "脚本库", "url": "/catalog/", "icons": [{"src": "/icon-192.png", "sizes": "192x192"}]},
+    {"name": "APP下载", "url": "/apps/", "icons": [{"src": "/icon-192.png", "sizes": "192x192"}]}
   ]
 }
