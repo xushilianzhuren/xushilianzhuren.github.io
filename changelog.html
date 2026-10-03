@@ -83,7 +83,11 @@ function tgTheme(){var h=document.documentElement,d=h.getAttribute('data-theme')
 </header>
 
 <div class="ver">
-    <h2>v4.1.0<span class="tag">2026-10-03</span><span class="tag">PWA离线包·跨代</span></h2>
+    <section>
+<h2>v4.2.0 多语言EN版·断代候选全闭环</h2>
+<p><b>English site goes live</b>: <a href="index-en.html">index-en.html</a> — 英文落地页上线（34 skills/631 scripts/19 apps 全英文呈现+英文FAQ Schema+og:locale en_US）。全站 hreflang 互链（zh-CN ↔ en ↔ x-default），首页加 EN 一键切换，抽屉导航增 English Site 入口。sitemap 48 条+IndexNow 已提交。<b>至此 2026-10-02 主人钦定断代候选五件套（全站暗色/商品详情页矩阵/在线客服/多语言/PWA离线包）全部落地。</b></p>
+</section>
+<h2>v4.1.0<span class="tag">2026-10-03</span><span class="tag">PWA离线包·跨代</span></h2>
   <p>官网正式成为PWA（渐进式Web应用）：Service Worker全站上线——54页注入离线引擎，核心页预缓存，断网/弱网/飞行模式下依然可浏览技能库与商品详情，联网后自动更新到最新版。手机浏览器菜单"添加到主屏幕"即获得类APP体验（独立窗口+品牌图标+启动画面），桌面图标由"帝"字红底金弧光品牌图标担纲（192/512/maskable三规格+iOS专属apple-touch-icon），应用内长按还有快捷入口直通AI技能/脚本库/APP下载。sw.js与manifest由服务器下发禁缓存头保证永不卡旧版本。与APK直装形成双轨：不想装APK的访客，PWA就是轻量入口。</p>
   <h2>v4.0.7<span class="tag">2026-10-03</span><span class="tag">自动保镖+备份治本</span></h2>
   <p>编年史按月自动钩子上线：广州节点每日20:35自动检查帝国编年史——当月过5天仍无当月条目即自动派单补录（幂等每月一提），"只增不删"的承诺从此有机器保镖值守，断月风险清零。同批COS冷备治本：561M帝国备份包三连败根因确诊为单流分片上传在慢链路必然超时——v3分卷管道改为12片×50M独立单请求上传，每片独立重试+逐片验活+云端manifest还原协议（cat合并即复原），大文件冷备从"一次20分钟全赌"变"110秒粒度断点续传"，片片可验、断点可续。</p>
