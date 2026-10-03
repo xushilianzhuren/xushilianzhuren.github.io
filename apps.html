@@ -12,6 +12,7 @@
 <meta name="twitter:title" content="APP商店 · 智神帝国">
 <meta name="twitter:description" content="19款原创安卓APP：智神掌控/AI专线/MD查找器等，安装包+终身授权">
 <meta name="theme-color" content="#8a1f1f">
+<link rel="apple-touch-icon" href="https://zhishendiguo.com/apple-touch-icon.png">
 <link rel="manifest" href="manifest.json">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "APP商店 · 智神帝国", "url": "https://zhishendiguo.com/apps.html", "description": "19款原创安卓APP：智神掌控/AI专线/MD查找器等，安装包+终身授权", "isPartOf": {"@type": "WebSite", "name": "智神帝国", "url": "https://zhishendiguo.com/"}, "mainEntity": {"@type": "ItemList", "numberOfItems": 19}}</script>
 <meta name="description" content="智神帝国APP商店：智神终端、智神输入法、炼丹炉等Android应用官方下载，持续更新。"><meta name="keywords" content="AI自动化,脚本下载,APP商店,智神帝国">
@@ -160,4 +161,7 @@ function dg(n){document.getElementById('dw').classList.toggle('open',n);document
   </div>
 </footer>
 </div><script src="https://zhishendiguo.com/cs.js" defer></script>
+<script>
+if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('/sw.js').catch(function(){});});}
+</script>
 </body></html>
