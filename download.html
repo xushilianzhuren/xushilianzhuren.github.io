@@ -117,6 +117,11 @@ html[data-theme="dark"] .dl-qr img{border-color:#3a352f;background:#f5f1e8;}
 <p>下载完成后，在电脑终端对文件跑一条命令，输出与上面一致即为原装：</p>
 <span class="hash">Windows&nbsp;&nbsp;certutil -hashfile ZhishenApp.apk SHA256<br>macOS&nbsp;&nbsp;&nbsp;&nbsp;shasum -a 256 ZhishenApp.apk<br>Linux&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sha256sum ZhishenApp.apk</span>
 
+<h2>工作原理（源码级真实）</h2>
+<div class="qa"><h3>它是什么架构？</h3><p>三段式：<strong>手机客户端 + 帝国专线服务 + 大模型路由</strong>。APP是Android原生Java客户端（纯Java零WebView），连接帝国专线服务（广州主机+上海热备双机部署，FastAPI），对话由服务端路由到大模型引擎（glm-5.3-flash / glm-4.5-flash / glm-4-flash / deepseek-chat 四候选，某个引擎不可用自动跳下一个）。APP本体不内置任何模型——智力在云端，升级不停版。</p></div>
+<div class="qa"><h3>账号是怎么工作的？</h3><p>用户名+密码注册，密码在服务端只存SHA256哈希（明文不可见不可逆），注册即获得独立对话空间与文件目录。登录态保留30天。多一层防护：IP限速+爆破自动拉黑。</p></div>
+<div class="qa"><h3>现在能注册吗？</h3><p><strong>能。</strong>两条入口：①手机装好APP打开即见登录/注册界面；②电脑浏览器直接访问 <a href="https://zhishendiguo.com/xianlu">zhishendiguo.com/xianlu 白幼真专线</a>，填用户名+密码点"注册"即用。已有账号直接"进入"。</p></div>
+
 <h2>安装三步（Android）</h2>
 <div class="step"><h3 data-n="1">下载 APK</h3><p>点上方"下载 APK"按钮，把安装包存到手机；或电脑下载后传到手机。</p></div>
 <div class="step"><h3 data-n="2">允许安装</h3><p>点开 APK，系统提示"未知来源"属正常——在弹出的设置里允许你的浏览器/文件管理器安装应用，返回继续。</p></div>
