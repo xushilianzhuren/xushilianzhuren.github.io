@@ -55,7 +55,7 @@ footer a{color:var(--accent);text-decoration:none;}
 <meta property="og:url" content="https://zhishendiguo.com/changelog">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
-  <link rel="canonical" href="https://zhishendiguo.com/changelog.html">
+    <link rel="canonical" href="https://zhishendiguo.com/changelog.html">
 </head>
 <body>
 <button class="themebtn" id="tb" aria-label="切换昼夜" onclick="tgTheme()">🌙</button>
@@ -85,6 +85,8 @@ function tgTheme(){var h=document.documentElement,d=h.getAttribute('data-theme')
 
 <div class="ver">
     <section>
+<h2>v4.2.6<span class="tag">2026-10-10</span><span class="tag">SEO·自动化</span></h2>
+<p><b>sitemap lastmod全量上线</b>：55条URL全部注入lastmod（取各页真实修改时间·Google重爬优先级唯一信号），此前零lastmod=重爬信号缺失。<b>每日自动维护管道</b>：广州机20:33 cron自动刷新（daily_gen后3分钟）+IndexNow同步提交，sitemap进入"内容变→信号变"自动轨道。<b>E924资产核验收官</b>：E系实物备份560MB COS端12分片+MANIFEST逐片核对总和精确吻合+抽验MD5 MATCH，资产字节级完好坐实。</p>
 <h2>v4.2.5<span class="tag">2026-10-10</span><span class="tag">修复·规范</span></h2>
 <p><b>站内52页双态失步修复</b>：/about/ /apps/ /changelog/ 等52个目录路径此前返回旧版内容（v4.0.6时代），现全部与正本同步。<b>镜像同步器v2.2</b>：别名自动重建功能回归，失步窗口从"无限"压缩到30分钟。<b>专线页规范</b>：/xianlu/ 尾斜杠301重定向，全站URL单一规范。<b>APP更新接口修正</b>：主域名/api/version从23.4旧版+裸IP修正为23.8+https域名路径，v23.8安装包已上架官网（SHA256=ccd4d0cc...）。</p>
 <h2>v4.2.4<span class="tag">2026-10-10</span><span class="tag">注册开放·原理公开</span></h2>
